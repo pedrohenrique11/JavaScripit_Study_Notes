@@ -23,7 +23,7 @@ body {
 }
 
 .titleContainer {
-    width: 70vw;
+    width: 50vw;
     height:20rem;
     
     display: flex;
@@ -35,6 +35,7 @@ body {
     box-shadow: 8px 8px 10px 1px rgba(0, 0, 0, 0.6);
     border-radius: 8px;
     color: #23252C;
+    transition: .4s;
 }
 
 .titleContainer h1 {
@@ -45,7 +46,11 @@ body {
 .titleContainer h3 {
     font-weight: 300;
 }
-
+@media (max-width: 1000px) {
+    .titleContainer {
+        width: 70vw;
+    }
+}
 @media (max-width: 700px) {
     :root {
         font-size: 12px;

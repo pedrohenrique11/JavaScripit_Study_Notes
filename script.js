@@ -71,7 +71,7 @@ function sayName() {
 
 //---------------------------------------------------------------------------------------//
 
-// AULA 5 - Operadores
+// AULA 5 - Operadores  //
 
 // Operadores Aritimetricos(Matematicos) -----------------------------------------------//
 
@@ -133,9 +133,190 @@ let exameNaoDetectaAnabol = true;
 // "OU" (||)
 //Retorna true se um dos operandos for true
 let podeCompetir = pagouInscricao && naoUsouAnabol || exameNaoDetectaAnabol;
-console.log('Pode Competir ?', podeCompetir)
+//console.log('Pode Competir ?', podeCompetir)
 
 //"NOT" (!)
 // Retorna false
 let competidorDesclassificado = !podeCompetir
-console.log('Foi desclassificado ?', competidorDesclassificado)
+//console.log('Foi desclassificado ?', competidorDesclassificado)
+
+
+// Falsy (undefined, null, 0, false, '', NaN - not a number)
+// Truthy (true e Tudo que nao seja falsy)
+let corPersonalizada = ''; //falsy
+let corPadrao = 'Azul'; //truthy
+let corPerfil = corPersonalizada || corPadrao;
+
+//console.log(corPerfil); //Azul
+
+//---------------------------------------------------------------------------------------//
+
+//  TROCANDO O VALOR DE VARIAVEIS
+
+let a = 'vermelho';
+let b = 'azul';
+
+let c = a;
+
+a = b
+
+b = c
+
+//console.log(a)
+//console.log(b)
+
+//---------------------------------------------------------------------------------------//
+
+//  CONDICIONAIS  //
+
+// If..Else -----------------------------------------------------------------------------//
+
+    /*if(condicao) {
+        //codigo a ser executado
+    }
+    else if (outraCondicao) {
+        //codigo a ser executado
+    }
+    else {
+        //codigo a ser executado
+    }*/
+
+// Exemplo I
+// Se a hora estiver entre 06:00 e 12:00 a mensagem exibira "Bom Dia !"
+// Se estiver entre 12:00 e 18:00 exibira "Boa Tarde !"
+// Caso contrario exibira "Boa Noite !"
+let hour = 11;
+
+if(hour > 6 && hour < 12 ) {
+    //console.log("Bom Dia !")
+}
+else if(hour > 12 && hour < 18) {
+    //console.log("Boa Tarde !")
+}
+else {
+    //console.log("Boa Noite !")
+} 
+
+// Switch..Case --------------------------------------------------------------------------//
+
+let permissao; // student, teacher, principal
+permissao = 'teacher'
+
+switch (permissao) {
+    case 'student': //caso o valor da variavel seja 'studant'
+        console.log('student user'); // codigo a ser executado
+    break;
+
+    case 'teacher':
+        //console.log('teacher user');
+    break;
+
+    case 'principal':
+        console.log('principal user');
+    break;
+
+    default: // caso nao seja nenhuma das opcoes
+        //console.log('user undefined')
+}
+
+//---------------------------------------------------------------------------------------//
+
+// LOOP FOR //
+
+// For ----------------------------------------------------------------------------------//
+for(let i = 0; i <= 5; i++) // loop de 0 a 4
+    if(i % 2 !== 0 ) { // mostrando apenas os impares do loop
+        //console.log(i)
+    }
+
+// While --------------------------------------------------------------------------------//
+
+let j = 5;
+
+while (j >= 1) {
+    if(j % 2 !== 0) {
+        //console.log(j)
+    }
+    j--;
+}
+// Do..While ----------------------------------------------------------------------------//
+let d = 0
+do {
+    //console.log( 'digitando!',d)
+    d++;
+} while (d <= 10);
+
+// for --------------------------------------------------------------------------------//
+const indv = {
+  //key: value,
+    nome: 'pedro',
+    idade: 18 ,
+}
+
+for (let key in indv) {
+    //console.log(key,indv);
+}
+
+// for-of --------------------------------------------------------------------------------//
+// consegue pegar os valores que estao no array sem enumerar
+const movies = ['blade runner', 'taxi driver', 'logan']
+
+for (let movie of movies) {
+    //console.log(movie)
+}
+
+//---------------------------------------------------------------------------------------//
+// EXERCICIO //
+
+// Escrever uma funcao que usa 2 numeros e retorna o maior entre eles 
+
+let maiorNumero = maiorNumeroEntre(11, 67)
+//console.log(maiorNumero)
+
+function maiorNumeroEntre(x,z) {
+    if (x > z) {
+        return x;
+        //console.log(x)
+    }
+    else {
+        return z;
+        //console.log(z)
+    }
+}
+//maiorNumeroEntre(11, 67)
+
+// Correcao -- forma mais simples de fazer a comparacao
+
+let numberTest = max(11,67)
+//console.log(numberTest)
+
+function max(x,z) {
+    return x > z ? x : z ;
+}
+
+//---------------------------------------------------------------------------------------//
+
+// FizzBuzz - EXECICIO //
+
+//Divisivel por 3, retorna Fizz
+//Divisivel por 5, retorna Buzz
+//Divisivel por 3 e 5, retorna FizzBuzz
+//Nao e divisivel por 3 e 5, retorna a entrada
+//Nao e um numero, retorna 'nao e um numero' 
+
+const resultFizzBuzz = fizzBuzz();
+console.log(resultFizzBuzz)
+
+function fizzBuzz(entrada) {      
+    if (entrada % 3 === 0 && entrada % 5 === 0) 
+        return 'FizzBuzz';
+    else if ( entrada % 3 === 0 )
+        return 'Fizz';
+    else if ( entrada % 5 === 0 )
+        return 'Buzz';
+    else if ( typeof entrada !== 'number' ) 
+        return 'Não é um número !!!';
+    else return entrada  
+}
+
+//---------------------------------------------------------------------------------------//
